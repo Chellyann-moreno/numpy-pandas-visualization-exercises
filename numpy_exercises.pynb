@@ -46,6 +46,48 @@
   },
   {
    "cell_type": "code",
+   "execution_count": 39,
+   "id": "ab31aacb-3f1a-4571-8d12-5c3b37f3abdb",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([-2, -1, -6, -7])"
+      ]
+     },
+     "execution_count": 39,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a[a<0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "id": "baffd2f9-43d5-4aee-b003-c5e21066620f",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "4"
+      ]
+     },
+     "execution_count": 41,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "len(a[a<0])"
+   ]
+  },
+  {
+   "cell_type": "code",
    "execution_count": 9,
    "id": "ff7abe5d-b9f0-4518-9c60-b26a080b56f1",
    "metadata": {},
@@ -67,28 +109,70 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": 42,
+   "id": "4c7089d6-733f-4ae8-9980-7f7a94b5ccb5",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "8"
+      ]
+     },
+     "execution_count": 42,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "len(a[a>=0])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 52,
    "id": "352dafa0-14aa-4eb7-a455-469e5c4be409",
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "array([ 4, 10, 12,  0,  0,  0])"
+       "array([ 4, 10, 12])"
       ]
      },
-     "execution_count": 22,
+     "execution_count": 52,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
-    " a[(a%2==0)&(a>=0)]#3 or #6"
+    " a[(a%2==0)&(a>0)]#3 or #6"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": 51,
+   "id": "588de4eb-0044-4a4a-9466-aa15b3414e89",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "3"
+      ]
+     },
+     "execution_count": 51,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "len(a[(a%2==0)&(a>0)])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
    "id": "d8a21b22-d587-4b11-bfdb-998773ff28bd",
    "metadata": {},
    "outputs": [],
@@ -119,7 +203,28 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
+   "execution_count": 45,
+   "id": "24cfe07f-d9f7-4d1c-a7d0-a024e102d961",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "10"
+      ]
+     },
+     "execution_count": 45,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "len(b[b>0])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
    "id": "6ce3eaf1-48e9-41b5-aca8-01bd2156a088",
    "metadata": {},
    "outputs": [],
@@ -192,7 +297,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 30,
+   "execution_count": 53,
    "id": "3c86affe-a781-4ccd-a992-2426b0e822f8",
    "metadata": {},
    "outputs": [
@@ -202,7 +307,7 @@
        "3.0"
       ]
      },
-     "execution_count": 30,
+     "execution_count": 53,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -213,8 +318,18 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 32,
+   "execution_count": 55,
    "id": "c03fa382-bd9a-447c-a38c-e1e7bf52bb5a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "centered=a-np.mean(a) #centering"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 56,
+   "id": "df3f6331-da89-499d-a7cb-c95de00495b6",
    "metadata": {},
    "outputs": [
     {
@@ -224,13 +339,34 @@
        "       -10.])"
       ]
      },
-     "execution_count": 32,
+     "execution_count": 56,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
-    "a-np.mean(a) #centering"
+    "centered\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 57,
+   "id": "ef074cd2-904c-4b77-b203-5d21247d4bec",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0.0"
+      ]
+     },
+     "execution_count": 57,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "centered.mean()"
    ]
   },
   {
