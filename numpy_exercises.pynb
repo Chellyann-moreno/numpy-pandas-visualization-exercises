@@ -1,0 +1,297 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "ca3b8fab-11d5-4028-ad12-7e77b6593233",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f5c825ea-64e1-4047-8cc3-e4e765af6a48",
+   "metadata": {},
+   "source": [
+    "Use the following code for the questions below:\n",
+    "\n",
+    "\n",
+    "a = np.array([4, 10, 12, 23, -2, -1, 0, 0, 0, -6, 3, -7])\n",
+    "How many negative numbers are there?\n",
+    "\n",
+    "How many positive numbers are there?\n",
+    "\n",
+    "How many even positive numbers are there?\n",
+    "\n",
+    "If you were to add 3 to each data point, how many positive numbers would there be?\n",
+    "\n",
+    "If you squared each number, what would the new mean and standard deviation be?\n",
+    "\n",
+    "A common statistical operation on a dataset is centering. This means to adjust the data such that the mean of the data is 0. This is done by subtracting the mean from each data point. Center the data set. See this link for more on centering.\n",
+    "\n",
+    "Calculate the z-score for each data point.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "493aee52-b2bd-45a7-aa12-83c988036751",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a = np.array([4, 10, 12, 23, -2, -1, 0, 0, 0, -6, 3, -7])\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "ff7abe5d-b9f0-4518-9c60-b26a080b56f1",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ 4, 10, 12, 23,  0,  0,  0,  3])"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a[a>=0]  #8"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "352dafa0-14aa-4eb7-a455-469e5c4be409",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ 4, 10, 12,  0,  0,  0])"
+      ]
+     },
+     "execution_count": 22,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    " a[(a%2==0)&(a>=0)]#3 or #6"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "d8a21b22-d587-4b11-bfdb-998773ff28bd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "b=a +3"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "57435da5-d598-4ad2-bc7d-e629fef25832",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ 7, 13, 15, 26,  1,  2,  3,  3,  3,  6])"
+      ]
+     },
+     "execution_count": 21,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "b[b>0] #10"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "6ce3eaf1-48e9-41b5-aca8-01bd2156a088",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "c=a**2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "c6b8413c-8e7e-435c-9543-744a913f3124",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ 16, 100, 144, 529,   4,   1,   0,   0,   0,  36,   9,  49])"
+      ]
+     },
+     "execution_count": 26,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "c"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "b41eac81-e55c-461e-afc0-d2c7cdad76b6",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "74.0"
+      ]
+     },
+     "execution_count": 27,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "c.mean()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "c2292d9b-d1b0-4758-8076-aeceda55d9f8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "144.0243035046516"
+      ]
+     },
+     "execution_count": 29,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "c.std()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "3c86affe-a781-4ccd-a992-2426b0e822f8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "3.0"
+      ]
+     },
+     "execution_count": 30,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "np.mean(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "id": "c03fa382-bd9a-447c-a38c-e1e7bf52bb5a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([  1.,   7.,   9.,  20.,  -5.,  -4.,  -3.,  -3.,  -3.,  -9.,   0.,\n",
+       "       -10.])"
+      ]
+     },
+     "execution_count": 32,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a-np.mean(a) #centering"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "id": "4032b41f-da31-4d52-8011-22c2ec7582da",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ 0.12403473,  0.86824314,  1.11631261,  2.48069469, -0.62017367,\n",
+       "       -0.49613894, -0.3721042 , -0.3721042 , -0.3721042 , -1.11631261,\n",
+       "        0.        , -1.24034735])"
+      ]
+     },
+     "execution_count": 37,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "(a-np.mean(a))/np.std(a) #zscore"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d07c1de3-3502-44a0-bcf0-ef99dc3efec9",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "efb4aca3-7679-4cba-93ae-df367d694cae",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.13"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
