@@ -1,0 +1,2275 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "01002208-94ac-4dd4-98f8-07f3b3e018ed",
+   "metadata": {},
+   "source": [
+    "Panda Series"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "34b3362b-bda9-473e-81db-4e61f9233ff2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "initiated datasets repo at: /Users/chellyannmoreno/.pydataset/\n"
+     ]
+    }
+   ],
+   "source": [
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "from pydataset import data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b497750b-560d-4a09-93ec-4191129039e5",
+   "metadata": {},
+   "source": [
+    "Create Series"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "1c0a99dc-3fbb-4156-9006-342cf3b0989a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_list=[2,3,4]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "85b3cace-b91f-4a20-9aba-4d9e6aef27a2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_ar=np.array(my_list)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "53ddea62-2fc5-43f3-abeb-205e29172702",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([2, 3, 4])"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_ar"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "52dcb801-9321-41ae-9d79-6a966ebb699c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_series=pd.Series(my_list)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "3f5c9f37-5614-4504-970f-0edddf62a7eb",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0    2\n",
+       "1    3\n",
+       "2    4\n",
+       "dtype: int64"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_series"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c066227c-21d0-4d72-b8d7-10f54a7c8deb",
+   "metadata": {},
+   "source": [
+    "Index 0,1,2\n",
+    "\n",
+    "0    2\n",
+    "1    3\n",
+    "2    4\n",
+    "dtype: int64"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "6a9fe925-84db-4412-9e9e-483f1bdfc81d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_series=pd.Series(my_ar)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "5a49cee0-72b6-4a6f-8899-a70786b992b3",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0    2\n",
+       "1    3\n",
+       "2    4\n",
+       "dtype: int64"
+      ]
+     },
+     "execution_count": 10,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_series"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "c897a74d-b499-4f33-9680-19e433641257",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_dataf=data('sleepstudy')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "30184313-2f99-417b-9b57-bb6dd6f27c7f",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>dataset_id</th>\n",
+       "      <th>title</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>AirPassengers</td>\n",
+       "      <td>Monthly Airline Passenger Numbers 1949-1960</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>BJsales</td>\n",
+       "      <td>Sales Data with Leading Indicator</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>BOD</td>\n",
+       "      <td>Biochemical Oxygen Demand</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>Formaldehyde</td>\n",
+       "      <td>Determination of Formaldehyde</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>HairEyeColor</td>\n",
+       "      <td>Hair and Eye Color of Statistics Students</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>752</th>\n",
+       "      <td>VerbAgg</td>\n",
+       "      <td>Verbal Aggression item responses</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>753</th>\n",
+       "      <td>cake</td>\n",
+       "      <td>Breakage Angle of Chocolate Cakes</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>754</th>\n",
+       "      <td>cbpp</td>\n",
+       "      <td>Contagious bovine pleuropneumonia</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>755</th>\n",
+       "      <td>grouseticks</td>\n",
+       "      <td>Data on red grouse ticks from Elston et al. 2001</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>756</th>\n",
+       "      <td>sleepstudy</td>\n",
+       "      <td>Reaction times in a sleep deprivation study</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>757 rows × 2 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "        dataset_id                                             title\n",
+       "0    AirPassengers       Monthly Airline Passenger Numbers 1949-1960\n",
+       "1          BJsales                 Sales Data with Leading Indicator\n",
+       "2              BOD                         Biochemical Oxygen Demand\n",
+       "3     Formaldehyde                     Determination of Formaldehyde\n",
+       "4     HairEyeColor         Hair and Eye Color of Statistics Students\n",
+       "..             ...                                               ...\n",
+       "752        VerbAgg                  Verbal Aggression item responses\n",
+       "753           cake                 Breakage Angle of Chocolate Cakes\n",
+       "754           cbpp                 Contagious bovine pleuropneumonia\n",
+       "755    grouseticks  Data on red grouse ticks from Elston et al. 2001\n",
+       "756     sleepstudy       Reaction times in a sleep deprivation study\n",
+       "\n",
+       "[757 rows x 2 columns]"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "data()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "e83968d4-ac20-4eff-9c83-2abb7aa15ce8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Reaction</th>\n",
+       "      <th>Days</th>\n",
+       "      <th>Subject</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>249.5600</td>\n",
+       "      <td>0</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>258.7047</td>\n",
+       "      <td>1</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>250.8006</td>\n",
+       "      <td>2</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>321.4398</td>\n",
+       "      <td>3</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>356.8519</td>\n",
+       "      <td>4</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>176</th>\n",
+       "      <td>329.6076</td>\n",
+       "      <td>5</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>177</th>\n",
+       "      <td>334.4818</td>\n",
+       "      <td>6</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>178</th>\n",
+       "      <td>343.2199</td>\n",
+       "      <td>7</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>179</th>\n",
+       "      <td>369.1417</td>\n",
+       "      <td>8</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>180</th>\n",
+       "      <td>364.1236</td>\n",
+       "      <td>9</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>180 rows × 3 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "     Reaction  Days  Subject\n",
+       "1    249.5600     0      308\n",
+       "2    258.7047     1      308\n",
+       "3    250.8006     2      308\n",
+       "4    321.4398     3      308\n",
+       "5    356.8519     4      308\n",
+       "..        ...   ...      ...\n",
+       "176  329.6076     5      372\n",
+       "177  334.4818     6      372\n",
+       "178  343.2199     7      372\n",
+       "179  369.1417     8      372\n",
+       "180  364.1236     9      372\n",
+       "\n",
+       "[180 rows x 3 columns]"
+      ]
+     },
+     "execution_count": 16,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_dataf"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "c743a600-fffc-474b-98f7-fe87e96ba053",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "Index(['Reaction', 'Days', 'Subject'], dtype='object')"
+      ]
+     },
+     "execution_count": 17,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_dataf.columns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "04760952-1e08-4aa2-a5f6-ac232178edf2",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1      249.5600\n",
+       "2      258.7047\n",
+       "3      250.8006\n",
+       "4      321.4398\n",
+       "5      356.8519\n",
+       "         ...   \n",
+       "176    329.6076\n",
+       "177    334.4818\n",
+       "178    343.2199\n",
+       "179    369.1417\n",
+       "180    364.1236\n",
+       "Name: Reaction, Length: 180, dtype: float64"
+      ]
+     },
+     "execution_count": 19,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_dataf.Reaction"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "577c8777-ade5-4287-be88-919ef55f56eb",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Reaction</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>249.5600</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>258.7047</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>250.8006</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>321.4398</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>356.8519</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>176</th>\n",
+       "      <td>329.6076</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>177</th>\n",
+       "      <td>334.4818</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>178</th>\n",
+       "      <td>343.2199</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>179</th>\n",
+       "      <td>369.1417</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>180</th>\n",
+       "      <td>364.1236</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>180 rows × 1 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "     Reaction\n",
+       "1    249.5600\n",
+       "2    258.7047\n",
+       "3    250.8006\n",
+       "4    321.4398\n",
+       "5    356.8519\n",
+       "..        ...\n",
+       "176  329.6076\n",
+       "177  334.4818\n",
+       "178  343.2199\n",
+       "179  369.1417\n",
+       "180  364.1236\n",
+       "\n",
+       "[180 rows x 1 columns]"
+      ]
+     },
+     "execution_count": 22,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_dataf[['Reaction']]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "3efe84d8-1490-44d5-8fc5-8e14183d4f0a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1    249.5600\n",
+       "2    258.7047\n",
+       "3    250.8006\n",
+       "4    321.4398\n",
+       "5    356.8519\n",
+       "Name: Reaction, dtype: float64"
+      ]
+     },
+     "execution_count": 25,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_dataf.Reaction.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "1a839f64-f0a9-4de4-a619-41943404243b",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "176    329.6076\n",
+       "177    334.4818\n",
+       "178    343.2199\n",
+       "179    369.1417\n",
+       "180    364.1236\n",
+       "Name: Reaction, dtype: float64"
+      ]
+     },
+     "execution_count": 26,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_dataf.Reaction.tail()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "586dded5-4bf1-454d-8136-c1bb162b2e45",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Reaction</th>\n",
+       "      <th>Days</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>249.5600</td>\n",
+       "      <td>0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>258.7047</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>250.8006</td>\n",
+       "      <td>2</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>321.4398</td>\n",
+       "      <td>3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>356.8519</td>\n",
+       "      <td>4</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>176</th>\n",
+       "      <td>329.6076</td>\n",
+       "      <td>5</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>177</th>\n",
+       "      <td>334.4818</td>\n",
+       "      <td>6</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>178</th>\n",
+       "      <td>343.2199</td>\n",
+       "      <td>7</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>179</th>\n",
+       "      <td>369.1417</td>\n",
+       "      <td>8</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>180</th>\n",
+       "      <td>364.1236</td>\n",
+       "      <td>9</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>180 rows × 2 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "     Reaction  Days\n",
+       "1    249.5600     0\n",
+       "2    258.7047     1\n",
+       "3    250.8006     2\n",
+       "4    321.4398     3\n",
+       "5    356.8519     4\n",
+       "..        ...   ...\n",
+       "176  329.6076     5\n",
+       "177  334.4818     6\n",
+       "178  343.2199     7\n",
+       "179  369.1417     8\n",
+       "180  364.1236     9\n",
+       "\n",
+       "[180 rows x 2 columns]"
+      ]
+     },
+     "execution_count": 28,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_dataf[['Reaction','Days']]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "9de447d2-bbb9-4ea2-99a4-aa8ee75cfee2",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1      249.5600\n",
+       "2      258.7047\n",
+       "3      250.8006\n",
+       "4      321.4398\n",
+       "5      356.8519\n",
+       "         ...   \n",
+       "176    329.6076\n",
+       "177    334.4818\n",
+       "178    343.2199\n",
+       "179    369.1417\n",
+       "180    364.1236\n",
+       "Name: Reaction, Length: 180, dtype: float64"
+      ]
+     },
+     "execution_count": 30,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_dataf.Reaction #column name needs to match no small r"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2d5716f6-ed1d-4be7-aef1-473f7ae17e05",
+   "metadata": {},
+   "source": [
+    "Series Datatypes"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "f297a5fe-c240-45e7-84a1-12deb38c3047",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0     True\n",
+       "1    False\n",
+       "2     True\n",
+       "dtype: bool"
+      ]
+     },
+     "execution_count": 31,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pd.Series([True,False,True])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "f71a58f8-b150-433d-8e0c-baccd22bb332",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0       True\n",
+       "1      False\n",
+       "2     Codeup\n",
+       "3       True\n",
+       "4         is\n",
+       "5    awesome\n",
+       "dtype: object"
+      ]
+     },
+     "execution_count": 33,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pd.Series([True,False,'Codeup',True,'is','awesome'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "514879bd-fec6-4f70-a1da-55175d73a1f0",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0    Chellyann\n",
+       "1           is\n",
+       "2          the\n",
+       "3         best\n",
+       "dtype: object"
+      ]
+     },
+     "execution_count": 35,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pd.Series(['Chellyann','is','the','best'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "id": "2ae1625f-0847-45bd-9255-a4020dd1d970",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0    5\n",
+       "1    2\n",
+       "2    3\n",
+       "3    4\n",
+       "dtype: object"
+      ]
+     },
+     "execution_count": 36,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pd.Series(['5',2,3,4])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "570eb8df-6f97-496f-8ede-3ed955614127",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a=pd.Series(['5',2,3,4])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "id": "d0eb473b-21ac-4a5e-b58f-37ec71d8892d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "new_series=a[a!= '5']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 45,
+   "id": "4552c364-2e9a-4bdb-b7ce-a7f5a7014a43",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1    2\n",
+       "2    3\n",
+       "3    4\n",
+       "dtype: object"
+      ]
+     },
+     "execution_count": 45,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "new_series"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "id": "d1a9a837-e8c9-4531-b7f2-ebcda47379f7",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1    2\n",
+       "2    3\n",
+       "3    4\n",
+       "dtype: int64"
+      ]
+     },
+     "execution_count": 46,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "new_series.astype('int')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "id": "0d4999e2-7a8c-4ba2-9800-5c27e5519789",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0    5\n",
+       "1    2\n",
+       "2    3\n",
+       "3    4\n",
+       "dtype: int64"
+      ]
+     },
+     "execution_count": 47,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a.astype('int')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "id": "f9ee4f54-10cc-40b4-950a-4ac64baa33be",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1      308\n",
+       "2      308\n",
+       "3      308\n",
+       "4      308\n",
+       "5      308\n",
+       "      ... \n",
+       "176    372\n",
+       "177    372\n",
+       "178    372\n",
+       "179    372\n",
+       "180    372\n",
+       "Name: Subject, Length: 180, dtype: object"
+      ]
+     },
+     "execution_count": 51,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_dataf.Subject.astype('str')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "588719cb-12c9-415c-ae26-3d1ac360fec8",
+   "metadata": {},
+   "source": [
+    "Vertctorized Operations\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 53,
+   "id": "6c988858-e359-4807-af5a-0c4a6149e678",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "s1=pd.Series([2,3,4,6])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 54,
+   "id": "02643543-000f-4c21-af24-5e857cdd8d39",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0    3\n",
+       "1    4\n",
+       "2    5\n",
+       "3    7\n",
+       "dtype: int64"
+      ]
+     },
+     "execution_count": 54,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s1 +1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 55,
+   "id": "5818b887-3840-461c-a994-4a6b5d192f3b",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0    0.666667\n",
+       "1    1.000000\n",
+       "2    1.333333\n",
+       "3    2.000000\n",
+       "dtype: float64"
+      ]
+     },
+     "execution_count": 55,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s1/3"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 56,
+   "id": "502da17f-2d99-4755-9647-c6d969410b73",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0    False\n",
+       "1    False\n",
+       "2    False\n",
+       "3     True\n",
+       "dtype: bool"
+      ]
+     },
+     "execution_count": 56,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s1>=5"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "39615f23-ada3-48f6-acad-fbb372b2ed2e",
+   "metadata": {},
+   "source": [
+    "Series Methods"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 59,
+   "id": "66b70487-552d-4fd4-9090-ed6309f63b7f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "s1=pd.Series([1,2,11,4,-55,6,7,8,9])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 60,
+   "id": "03c8be23-e3ed-4e6d-8f7a-0b3817005d4a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0     1\n",
+       "1     2\n",
+       "2    11\n",
+       "3     4\n",
+       "4   -55\n",
+       "dtype: int64"
+      ]
+     },
+     "execution_count": 60,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s1.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 61,
+   "id": "70b09dce-3b28-4554-9654-c8a90a95581b",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "4   -55\n",
+       "5     6\n",
+       "6     7\n",
+       "7     8\n",
+       "8     9\n",
+       "dtype: int64"
+      ]
+     },
+     "execution_count": 61,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s1.tail()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 62,
+   "id": "fd1845bf-897a-4f4e-a19e-6ea17317bca6",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Reaction</th>\n",
+       "      <th>Days</th>\n",
+       "      <th>Subject</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>249.5600</td>\n",
+       "      <td>0</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>258.7047</td>\n",
+       "      <td>1</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>250.8006</td>\n",
+       "      <td>2</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>321.4398</td>\n",
+       "      <td>3</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>356.8519</td>\n",
+       "      <td>4</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   Reaction  Days  Subject\n",
+       "1  249.5600     0      308\n",
+       "2  258.7047     1      308\n",
+       "3  250.8006     2      308\n",
+       "4  321.4398     3      308\n",
+       "5  356.8519     4      308"
+      ]
+     },
+     "execution_count": 62,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_dataf.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 66,
+   "id": "6d03d962-05e0-47a6-bdf3-5248ca3e140b",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Reaction</th>\n",
+       "      <th>Days</th>\n",
+       "      <th>Subject</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>176</th>\n",
+       "      <td>329.6076</td>\n",
+       "      <td>5</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>177</th>\n",
+       "      <td>334.4818</td>\n",
+       "      <td>6</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>178</th>\n",
+       "      <td>343.2199</td>\n",
+       "      <td>7</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>179</th>\n",
+       "      <td>369.1417</td>\n",
+       "      <td>8</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>180</th>\n",
+       "      <td>364.1236</td>\n",
+       "      <td>9</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "     Reaction  Days  Subject\n",
+       "176  329.6076     5      372\n",
+       "177  334.4818     6      372\n",
+       "178  343.2199     7      372\n",
+       "179  369.1417     8      372\n",
+       "180  364.1236     9      372"
+      ]
+     },
+     "execution_count": 66,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_dataf.tail()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 67,
+   "id": "26c054da-e41b-41e5-87cc-7298e86f49bb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "s2=my_dataf.Days"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 68,
+   "id": "f54cb737-a874-4aee-8915-d8ecdbcaa11e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1      0\n",
+       "2      1\n",
+       "3      2\n",
+       "4      3\n",
+       "5      4\n",
+       "      ..\n",
+       "176    5\n",
+       "177    6\n",
+       "178    7\n",
+       "179    8\n",
+       "180    9\n",
+       "Name: Days, Length: 180, dtype: int64"
+      ]
+     },
+     "execution_count": 68,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 72,
+   "id": "e46f6efc-14d0-48c2-b1d9-ab4a3eede8eb",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0    18\n",
+       "1    18\n",
+       "2    18\n",
+       "3    18\n",
+       "4    18\n",
+       "5    18\n",
+       "6    18\n",
+       "7    18\n",
+       "8    18\n",
+       "9    18\n",
+       "Name: Days, dtype: int64"
+      ]
+     },
+     "execution_count": 72,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s2.value_counts()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 76,
+   "id": "49646ed8-4e99-4f3a-8f44-929c90c21250",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Reaction</th>\n",
+       "      <th>Days</th>\n",
+       "      <th>Subject</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>249.5600</td>\n",
+       "      <td>0</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>258.7047</td>\n",
+       "      <td>1</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>250.8006</td>\n",
+       "      <td>2</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>321.4398</td>\n",
+       "      <td>3</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>356.8519</td>\n",
+       "      <td>4</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>6</th>\n",
+       "      <td>414.6901</td>\n",
+       "      <td>5</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>7</th>\n",
+       "      <td>382.2038</td>\n",
+       "      <td>6</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>8</th>\n",
+       "      <td>290.1486</td>\n",
+       "      <td>7</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>9</th>\n",
+       "      <td>430.5853</td>\n",
+       "      <td>8</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>10</th>\n",
+       "      <td>466.3535</td>\n",
+       "      <td>9</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "    Reaction  Days  Subject\n",
+       "1   249.5600     0      308\n",
+       "2   258.7047     1      308\n",
+       "3   250.8006     2      308\n",
+       "4   321.4398     3      308\n",
+       "5   356.8519     4      308\n",
+       "6   414.6901     5      308\n",
+       "7   382.2038     6      308\n",
+       "8   290.1486     7      308\n",
+       "9   430.5853     8      308\n",
+       "10  466.3535     9      308"
+      ]
+     },
+     "execution_count": 76,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_dataf[my_dataf['Subject']==308]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 83,
+   "id": "2a2ee056-c7e5-4fc2-a786-14373ed53f65",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 83,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "(s2>5).any()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 84,
+   "id": "4cf044dd-7c99-46b8-a7bf-2b4285e78d9d",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 84,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "(s2>5).all()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 85,
+   "id": "956b2a8c-6e85-41d0-af98-304bb1239c39",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "vowels=list('aeiou')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 86,
+   "id": "57c27185-1800-4549-ba69-f86f3b54927e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['a', 'e', 'i', 'o', 'u']"
+      ]
+     },
+     "execution_count": 86,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "vowels"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 87,
+   "id": "2f1348e7-c50d-44d9-be92-023a176fc7b0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "letters=list('abcdefghijklmnopqrstuvwxyz')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 88,
+   "id": "047c9231-fa3f-40e8-b5c7-cf2c5cde30bd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "letters_series=pd.Series(letters)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 89,
+   "id": "f05260b7-3abc-48b2-8c15-8d7f7c77676d",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0      True\n",
+       "1     False\n",
+       "2     False\n",
+       "3     False\n",
+       "4      True\n",
+       "5     False\n",
+       "6     False\n",
+       "7     False\n",
+       "8      True\n",
+       "9     False\n",
+       "10    False\n",
+       "11    False\n",
+       "12    False\n",
+       "13    False\n",
+       "14     True\n",
+       "15    False\n",
+       "16    False\n",
+       "17    False\n",
+       "18    False\n",
+       "19    False\n",
+       "20     True\n",
+       "21    False\n",
+       "22    False\n",
+       "23    False\n",
+       "24    False\n",
+       "25    False\n",
+       "dtype: bool"
+      ]
+     },
+     "execution_count": 89,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "letters_series.isin(vowels)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 91,
+   "id": "487b3c73-6f61-4a3f-b03b-82143abe4c41",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0      True\n",
+       "1     False\n",
+       "2     False\n",
+       "3     False\n",
+       "4      True\n",
+       "5     False\n",
+       "6     False\n",
+       "7     False\n",
+       "8      True\n",
+       "9     False\n",
+       "10    False\n",
+       "11    False\n",
+       "12    False\n",
+       "13    False\n",
+       "14     True\n",
+       "15    False\n",
+       "16    False\n",
+       "17    False\n",
+       "18    False\n",
+       "19    False\n",
+       "20     True\n",
+       "21    False\n",
+       "22    False\n",
+       "23    False\n",
+       "24    False\n",
+       "25    False\n",
+       "dtype: bool"
+      ]
+     },
+     "execution_count": 91,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "letters_series.isin(vowels)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 92,
+   "id": "d4e3e3cc-8173-4dc2-a26d-682f11314379",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False    21\n",
+       "True      5\n",
+       "dtype: int64"
+      ]
+     },
+     "execution_count": 92,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "letters_series.isin(vowels).value_counts()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 93,
+   "id": "0c63814a-2a96-40dc-9e42-2fee72f9f330",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 93,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "letters_series.isin(vowels).any()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 94,
+   "id": "85e58448-1a8a-4a86-962a-7ca231a5213c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 94,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "letters_series.isin(vowels).all()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 96,
+   "id": "f6b3b19e-fd98-49b4-9b1c-461b3cae87bb",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "AttributeError",
+     "evalue": "'DataFrame' object has no attribute 'Suject'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mAttributeError\u001b[0m                            Traceback (most recent call last)",
+      "\u001b[0;32m/var/folders/wd/5_z1tvw94pv9x2ld8p_0dl2r0000gn/T/ipykernel_49526/1366957676.py\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mmy_dataf\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mSuject\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mvalue_counts\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;32m/usr/local/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py\u001b[0m in \u001b[0;36m__getattr__\u001b[0;34m(self, name)\u001b[0m\n\u001b[1;32m   5573\u001b[0m         ):\n\u001b[1;32m   5574\u001b[0m             \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mname\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 5575\u001b[0;31m         \u001b[0;32mreturn\u001b[0m \u001b[0mobject\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m__getattribute__\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mname\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   5576\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   5577\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0m__setattr__\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mname\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0mstr\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mvalue\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m->\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mAttributeError\u001b[0m: 'DataFrame' object has no attribute 'Suject'"
+     ]
+    }
+   ],
+   "source": [
+    "my_dataf.Suject.value_counts()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "64da4e8f-a038-4d3a-be8b-7111e26a4125",
+   "metadata": {},
+   "source": [
+    "Methods for descriptives statistics"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 97,
+   "id": "4b9800c3-1c7d-4a9d-b2c6-ea246bcb89df",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "s3=my_dataf.Reaction"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 98,
+   "id": "f6e50179-3357-4b96-a390-341ae930604d",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "180"
+      ]
+     },
+     "execution_count": 98,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s3.count()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 99,
+   "id": "3ca91e10-0d5b-4abd-9ee2-c9370f7596da",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'count': 180, 'sum': 810, 'mean': 810, 'median': 4.5}"
+      ]
+     },
+     "execution_count": 99,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "{ 'count':s2.count(),\n",
+    " 'sum':s2.sum(),\n",
+    " 'mean':s2.sum(),\n",
+    " 'median':s2.median()}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 100,
+   "id": "828f4775-b6e7-4f17-b8da-65dee2475601",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "count    180.000000\n",
+       "mean       4.500000\n",
+       "std        2.880293\n",
+       "min        0.000000\n",
+       "25%        2.000000\n",
+       "50%        4.500000\n",
+       "75%        7.000000\n",
+       "max        9.000000\n",
+       "Name: Days, dtype: float64"
+      ]
+     },
+     "execution_count": 100,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s2.describe()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 101,
+   "id": "d18ff3c9-b185-4073-b61a-bac9fdd945f2",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Reaction</th>\n",
+       "      <th>Days</th>\n",
+       "      <th>Subject</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>249.5600</td>\n",
+       "      <td>0</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>258.7047</td>\n",
+       "      <td>1</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>250.8006</td>\n",
+       "      <td>2</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>321.4398</td>\n",
+       "      <td>3</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>356.8519</td>\n",
+       "      <td>4</td>\n",
+       "      <td>308</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>176</th>\n",
+       "      <td>329.6076</td>\n",
+       "      <td>5</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>177</th>\n",
+       "      <td>334.4818</td>\n",
+       "      <td>6</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>178</th>\n",
+       "      <td>343.2199</td>\n",
+       "      <td>7</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>179</th>\n",
+       "      <td>369.1417</td>\n",
+       "      <td>8</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>180</th>\n",
+       "      <td>364.1236</td>\n",
+       "      <td>9</td>\n",
+       "      <td>372</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>180 rows × 3 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "     Reaction  Days  Subject\n",
+       "1    249.5600     0      308\n",
+       "2    258.7047     1      308\n",
+       "3    250.8006     2      308\n",
+       "4    321.4398     3      308\n",
+       "5    356.8519     4      308\n",
+       "..        ...   ...      ...\n",
+       "176  329.6076     5      372\n",
+       "177  334.4818     6      372\n",
+       "178  343.2199     7      372\n",
+       "179  369.1417     8      372\n",
+       "180  364.1236     9      372\n",
+       "\n",
+       "[180 rows x 3 columns]"
+      ]
+     },
+     "execution_count": 101,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_dataf"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 104,
+   "id": "0db4f2f6-63d1-4a72-996b-b5908546aa42",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "Index(['Reaction', 'Days', 'Subject'], dtype='object')"
+      ]
+     },
+     "execution_count": 104,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_dataf.columns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 111,
+   "id": "0f3b29f7-6bbd-467b-8841-59831827a79a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def even_or_odd(n):\n",
+    "    if n % 2==0:\n",
+    "        return 'even'\n",
+    "    else:\n",
+    "        return 'odd'\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 112,
+   "id": "150e1137-148e-4cf4-b5ca-097aab52f715",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0     odd\n",
+       "1    even\n",
+       "2     odd\n",
+       "3    even\n",
+       "4     odd\n",
+       "5    even\n",
+       "6     odd\n",
+       "7    even\n",
+       "8     odd\n",
+       "dtype: object"
+      ]
+     },
+     "execution_count": 112,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s1.apply(even_or_odd)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "594f8ec4-4b4a-40ae-a014-3d0c07e8a9bd",
+   "metadata": {},
+   "source": [
+    "Vecotorized String Operations"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 113,
+   "id": "7bf21818-ef82-451e-85eb-5394202117dd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "s4=pd.Series(['Chellyann','Oliver','Shaine','Andrew','Corey'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 114,
+   "id": "cf9c7e22-f48f-461b-a9b7-210dfe2e48f1",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0    chellyann\n",
+       "1       oliver\n",
+       "2       shaine\n",
+       "3       andrew\n",
+       "4        corey\n",
+       "dtype: object"
+      ]
+     },
+     "execution_count": 114,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s4.str.lower()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 116,
+   "id": "52695a1b-1768-4dc2-9f2f-b50377d4f7e3",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0    CHELLYANN\n",
+       "1       OLIVER\n",
+       "2       SHAINE\n",
+       "3       ANDREW\n",
+       "4        COREY\n",
+       "dtype: object"
+      ]
+     },
+     "execution_count": 116,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s4.str.upper()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 117,
+   "id": "af78eeac-8a16-42ed-8ae6-865cf5023d67",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0     Chellyann\n",
+       "1        Oliver\n",
+       "2        Shaine\n",
+       "3    Instructor\n",
+       "4         Corey\n",
+       "dtype: object"
+      ]
+     },
+     "execution_count": 117,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s4.str.replace('Andrew','Instructor')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 120,
+   "id": "1f1cf2fa-290e-44ad-86d6-fe17053fafb5",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0     odd\n",
+       "1    even\n",
+       "2     odd\n",
+       "3    even\n",
+       "4     odd\n",
+       "5    even\n",
+       "6     odd\n",
+       "7    even\n",
+       "8     odd\n",
+       "dtype: object"
+      ]
+     },
+     "execution_count": 120,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s1.apply(even_or_odd)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e443e548-85b9-4dbb-b2d5-8f937ef6aac3",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "83d70efe-b22d-4acd-b112-15199fdd8844",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "faf1e817-6ccb-4898-8b6b-c2814e6900d3",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.13"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
